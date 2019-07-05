@@ -25,7 +25,13 @@ def add_players_team(players, Team):
     for player in players:
         Team.players.append(player)
 
+barcelona = create_team('Barcelona')
+list_of_teams.append(barcelona)
+add_players_team(create_list_players(11), barcelona)
 
+realmadrid = create_team('Real Madrid')
+list_of_teams.append(realmadrid)
+add_players_team(create_list_players(11), realmadrid)
 
 while True:
     print("Menu")
@@ -83,17 +89,7 @@ while True:
 
 
 '''
-barcelona = create_team('Barcelona')
-list_of_teams.append(barcelona)
-add_players_team(create_list_players(11), barcelona)
-barcelona.calculate_average_overall()
-barcelona.print()
 
-realmadrid = create_team('Real Madrid')
-list_of_teams.append(realmadrid)
-add_players_team(create_list_players(11), realmadrid)
-realmadrid.calculate_average_overall()
-realmadrid.print()
 
 partida = Match(barcelona, realmadrid)
 partida.calculate_match_win_odd()

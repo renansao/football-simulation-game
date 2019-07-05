@@ -81,6 +81,7 @@ class Match:
             print(" - ", self.team1.name," ",self.score[0] ," x ",self.score[1] ," ",self.team2.name)
             self.check_goal()
         self.determine_match_winner()
+        self.print_goals()
 
 
 
