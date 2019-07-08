@@ -6,6 +6,7 @@ class Team:
         self.name = name
         self.players = []
         self.avg_overall = 0
+        self.points = 0
 
     def calculate_average_overall(self):
         for player in self.players:

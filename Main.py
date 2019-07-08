@@ -1,7 +1,9 @@
 from player import Player, list_of_players
 from team import Team, list_of_teams
 from match import Match, list_of_matches
+from tournament import Tournament
 import random
+
 names = ["Lenny Gabbert","Thurman Clermont","Aurelio Arp","Jackson Tomas","William Hartness","Kristopher Yadao",
           "Garfield Star","Kris Robinette","Grant Mccurley","Connie Turney","Bradly Sadowski","Shannon Lindgren",
           "Johnie Raffaele","Miquel Goodin","Young Gallivan","Jim Mastroianni","Ellis Blocher","Dorian Lanoue",
@@ -28,10 +30,38 @@ def add_players_team(players, Team):
 barcelona = create_team('Barcelona')
 list_of_teams.append(barcelona)
 add_players_team(create_list_players(11), barcelona)
+barcelona.calculate_average_overall()
 
 realmadrid = create_team('Real Madrid')
 list_of_teams.append(realmadrid)
 add_players_team(create_list_players(11), realmadrid)
+realmadrid.calculate_average_overall()
+
+juventus = create_team('Juventus')
+list_of_teams.append(realmadrid)
+add_players_team(create_list_players(11), juventus)
+juventus.calculate_average_overall()
+
+atl_madrid = create_team('Atletico Madrid')
+list_of_teams.append(realmadrid)
+add_players_team(create_list_players(11), atl_madrid)
+atl_madrid.calculate_average_overall()
+
+milan = create_team('Milan')
+list_of_teams.append(realmadrid)
+add_players_team(create_list_players(11), milan)
+milan.calculate_average_overall()
+
+inter = create_team('Inter')
+list_of_teams.append(realmadrid)
+add_players_team(create_list_players(11), inter)
+inter.calculate_average_overall()
+
+torneio = Tournament([milan, realmadrid, barcelona, inter, juventus, atl_madrid])
+torneio.create_games()
+torneio.simulate_games()
+torneio.assign_points()
+
 
 while True:
     print("Menu")
@@ -68,8 +98,6 @@ while True:
         partida = Match(time1, time2)
         list_of_matches.append(partida)
         partida.simulate_game()
-
-
 
 
 

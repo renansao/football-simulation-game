@@ -17,7 +17,7 @@ class Match:
 
     def calculate_match_win_odd(self):
         diff = self.team1.avg_overall - self.team2.avg_overall
-        print(self.team1.avg_overall, self.team2.avg_overall)
+        #print(self.team1.avg_overall, self.team2.avg_overall)
         self.match_win_odd[0] = 50 + diff
         self.match_win_odd[1] = 100 - self.match_win_odd[0]
         self.match_win_odd[0] = float(format(self.match_win_odd[0], '.2f'))
@@ -57,13 +57,13 @@ class Match:
         goal = random.randint(1, 5000)
         if round(self.match_win_odd[0]) >= goal:
             self.score[0] += 1
-            print('GOOOOL!')
-            print('Marcado por, ', self.assign_goal(self.team1))
+            #print('GOOOOL!')
+            self.assign_goal(self.team1)
         goal = random.randint(1, 5000)
         if round(self.match_win_odd[1]) >= goal:
             self.score[1] += 1
-            print('GOOOOL!')
-            print('Marcado por, ', self.assign_goal(self.team2))
+            #print('GOOOOL!')
+            self.assign_goal(self.team2)
 
     def determine_match_winner(self):
         if self.score[0] > self.score[1]:
@@ -76,12 +76,13 @@ class Match:
     def simulate_game(self):
         self.calculate_match_win_odd()
         while self.time <= 90:
-            print(self.time,"'",end="")
+            #print(self.time,"'",end="")
             self.time +=1
-            print(" - ", self.team1.name," ",self.score[0] ," x ",self.score[1] ," ",self.team2.name)
+            #print(" - ", self.team1.name," ",self.score[0] ," x ",self.score[1] ," ",self.team2.name)
             self.check_goal()
+        print(self.team1.name," ",self.score[0] ," x ",self.score[1] ," ",self.team2.name)
         self.determine_match_winner()
-        self.print_goals()
+        #self.print_goals()
 
 
 
